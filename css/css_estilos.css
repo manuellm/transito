@@ -1,0 +1,302 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    background-color:#f0f0f0;
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+.cuerpo{
+   /* width:1024px;*/
+    width:1300px;
+    position:relative;
+    padding:10px;
+    margin:0px auto;
+}
+.header{
+    position:relative;
+    width:1300px;
+    margin:0px auto 10px auto;
+    height:49px;
+}
+.header .logo_secretaria{
+    float:left; margin-right:10px;
+}
+.header .datos{
+    float:left; margin-right:10px;
+    font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#474646; line-height:12px; letter-spacing:1px;
+}
+.header .datos .salir a{
+    font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#F00; line-height:15px; text-transform:uppercase; font-weight:bold; text-decoration:none
+}
+.header .logo_siosp{
+    float:right;
+}
+.logo_centrado {
+    position: relative;
+    top: 150px;
+    left: 390px;
+}
+/* Css Menu */
+.menu{
+    position:relative;
+    width:180px;
+    margin-left:10px;
+    float:left;
+}
+.menu .seccion{
+    background-color:#006a91;
+    width:172px;
+    padding:3px 3px 3px 5px;
+    text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#FFFFFF;
+}
+.menu .subseccion{
+    background-color:#fff; border-left:1px solid #999; border-bottom:1px solid #999; border-right:1px solid #999;
+    width:170px;
+    padding:3px 3px 3px 5px;
+    text-transform:uppercase; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#474646; cursor:pointer;
+}
+.menu .subseccion:hover{
+    background-color:#e7e6e6; color:#474646;
+}
+/* Css sesion */
+.sesion{
+    position:relative;
+    margin:150px auto 0 auto;
+    width:380px;
+    padding:20px 0;
+    /*border:5px solid #6d9c43;*/
+    border:5px solid #006a91;
+    background-color:#FFFFFF;
+}
+.sesion .titulo{
+    text-transform:uppercase; 
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:12px; 
+    font-weight:bold; 
+    text-align:center; 
+    /*color:#60893b;*/
+    color:#006a91;
+    width:380px;
+}
+.sesion .frm_sesion{
+    width:280px;
+    margin:15px 0px 15px 60px;
+}
+.sesion .frm_sesion .label{
+    margin-bottom:7px;
+}
+.sesion .frm_sesion .label input[type='text']{
+    border:1px solid #999;
+    width:250px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.sesion .frm_sesion .label input[type='password']{
+    border:1px solid #999;
+    width:250px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.sesion .frm_sesion .label input[type='button']{
+    border:1px solid #000; background-color:#898989;
+    padding:3px 15px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#fff;
+}
+
+/* Css contenido del cuerpo */
+.contenido{
+    position:relative;
+    border: 1px solid #999999; background-color:#FFFFFF;
+    width:1050px;
+    float:left;
+    margin-left:10px;
+    padding:10px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.contenido .titulo{
+    text-transform:uppercase; 
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:12px; 
+    font-weight:bold; 
+
+    color:#3d6a89; 
+    clear:both;
+}
+.contenido .interior{
+    margin:10px 0;
+    position:relative;
+ /*   width:1050px;*/
+    width:1050px;
+}
+
+.contenido .interior .encabezado{
+ /*   width:1050px; */
+    width:1050px; 
+    padding: 5px 0; 
+    text-align: center; 
+    margin: 10px 0; 
+    background-color: #dedddd;  
+    font-weight: bold; 
+
+    color: #006a91;
+}
+
+.contenido .interior .btn{
+    /*	border:1px solid #000; background-color:#dedddd;
+            padding:3px 5px; margin-left:15px;
+            font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646; text-decoration:none;*/
+}
+.contenido .interior .btn img{
+    vertical-align:middle; width:16px; height:16px;
+}
+.contenido .interior #motivo_delito{
+    margin-top:10px;
+}
+/* Formatos tablas */
+.contenido .interior td{
+    padding:5px; vertical-align:top;
+    font-size:12px;
+}
+/* Formato Tablas resultado */
+.contenido .interior .resultado .titulo{
+    width:1050px; 
+    padding: 5px 0; 
+    text-align: center; 
+    margin: 10px 0; 
+    background-color: #dedddd;  
+    font-weight: bold; 
+    /*color: #6d9c43;*/
+    color: #006a91;
+}
+.contenido .interior .resultado{
+    margin-top: 10px;
+}
+.contenido .interior .resultado table{
+    border-collapse: collapse;
+}
+.contenido .interior .resultado table th{
+    border: 1px solid #000; padding: 3px; background-color: #006a91; color: #fff; font-weight: bold;
+}
+.contenido .interior .resultado table td{
+    border: none; padding: 3px; color: #474646; vertical-align:middle;
+}
+/* Formato Tablas resultado */
+.contenido .interior .resultado table.grilla{
+    border-collapse: collapse;
+}
+.contenido .interior .resultado table.grilla th{
+    border: 1px solid #000; 
+    padding: 3px; 
+    /*background-color: #6d9c43;*/
+    background-color:#006a91; 
+    color: #fff; 
+    font-weight: bold;
+}
+.contenido .interior .resultado table.grilla td{
+    border: 1px solid #000; padding: 3px; color: #474646; vertical-align:middle;
+}
+/* Formato Tablas vista */
+.contenido .interior .view .titulo{
+    width:1050px; padding: 5px 0; text-align: center; margin: 10px 0; background-color: #dedddd;  font-weight: bold; color: #006a91;
+}
+.contenido .interior .view{
+    margin-top: 10px;
+}
+.contenido .interior .view table{
+    border-collapse: collapse;
+}
+.contenido .interior .view table th{
+    border: 1px solid #dedddd; background-color: #d6d6d6; padding: 3px;  color: #006a91 ; font-weight: bold;
+}
+.contenido .interior .view table td{
+    border: none; padding: 5px 3px; color: #474646; vertical-align:middle;
+}
+/*Error login*/
+.error{
+    font-size:10px; color:#FF0000; display:block;
+}
+.contenido .interior hr{
+    height:1px; border-color:#999; margin:10px;
+}
+/* Formatos formularios */
+.contenido .interior form{
+    margin:0px; padding:0px;
+}
+.contenido .interior input[type='text']{
+    border:1px solid #999;
+    width:230px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.contenido .interior input[type='text'].inputCorto{
+    border:1px solid #999;
+    width:80px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.contenido .interior input[type='text'].inputBusqueda{
+    border:1px solid #999;
+    width:180px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.contenido .interior input[type='password']{
+    border:1px solid #999;
+    width:220px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.contenido .interior a.button{
+    border:1px solid #000; background-color:#898989; cursor:pointer;
+    padding:3px 15px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#fff; text-decoration: none;
+}
+.contenido .interior input[type='button']{
+    border:1px solid #000; background-color:#898989; cursor:pointer;
+    padding:3px 15px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#fff;
+}
+.contenido .interior input[type='submit']{
+    border:1px solid #000; background-color:#898989; cursor:pointer;
+    padding:3px 15px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#fff;
+}
+.contenido .interior textarea{
+    border:1px solid #999;
+    width:230px;
+    height:50px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+.contenido .interior select{
+    border:1px solid #999;
+    width:220px;
+    padding:3px;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#474646;
+}
+/* Css contenido pie */
+.pie{
+    position:relative;
+    width:1004px;
+    margin-top:20px;
+    text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:10px; letter-spacing:1px; color:#666;
+}
+/* Loading */
+#cargando{
+    position:fixed;
+    margin:0px; padding:0px;
+    width:100%;
+    height:100%;
+    background-color:#fff; opacity: 0.5;
+    z-index:105000;
+    text-align:center;
+}
+#cargando .imgloading{
+    margin:auto;
+    font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;
+}
+/* Tooltip */
+.notificacion-tool{
+    background-color: #60893b; color: #FFFFFF;
+}

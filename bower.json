@@ -1,0 +1,20 @@
+{
+  "name": "SIOSP Academia",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-datepicker": "^1.6.1",
+    "sprintf": "^1.0.3",
+    "custombox": "^3.0.2",
+    "bootstrap3-dialog":"^1.35.1"
+  }
+}
