@@ -83,11 +83,6 @@ if ($aux == 0) {
         <script src="js/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript"></script>
         <link href="js/jquery-validation-1.15.0/demo/css/screen.css" rel="stylesheet" type="text/css"/>
         
-        
-        
-        
-        
-        
     </head>
 
     <body>

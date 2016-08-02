@@ -24,7 +24,7 @@
 </style>
 <div class="titulo">ACCIDENTES / CONTROL DE EVENTOS</div><br>
 <div>
-    RADIO OPERACION <br>
+    RADIO OPERACION <br/>
     <strong>AGREGAR EVENTO</strong>
 </div>
 <div class="interior">
@@ -158,7 +158,7 @@
                 </tr>
                 <tr>
                     <td>No. de Heridos.</td>
-                    <td>No. de Muertros</td>
+                    <td>No. de Muertos </td>
                 </tr>
                 <tr>
                     <td><input type="text" class="numero" id="no_de_heridos"  name="no_de_heridos" value="0"/></td>
@@ -231,7 +231,6 @@
             <tbody>
                 <tr>
                     <td>
-
                         <input type="submit" value="Guardar" id="guardar"/>
                         <input type="button" value="Cancelar" id="cancelar"/>
                     </td>
@@ -240,9 +239,11 @@
         </table> 
         <input type="hidden" value="2" name="activo"/>
         <input type="hidden" value="PARTICULAR" name="servicio" id="servicio"/>
-        <input type="hidden" value="<?= $_SESSION['idusuario']; ?>" name="useradd"/>
+        <input type="hidden" value="<?= $_SESSION['idusuario']; ?>" name="useradd" id="useradd"/>
+        <input type="hidden" value="<?= $_SESSION['idusuario']; ?>" name="usermod" id="usermod" disabled/>
         <input type="hidden" value="" id="folio_evento" name="folio_evento"/>
         <input type="hidden" value="" id="feccre" name="feccre"/>
+        <input type="hidden" value="" id="fecmod" name="fecmod"/>
         <input type="hidden" value="<?= isset($_REQUEST['control']) ? $_REQUEST['control'] : 0; ?>" id="control" name="control"/>
         <input type="hidden" value="<?= isset($_REQUEST['folio']) ? $_REQUEST['folio'] : 0; ?>" id="id_acc" name="id_acc"/>
     </form>

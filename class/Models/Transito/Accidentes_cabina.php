@@ -31,4 +31,23 @@ class Accidentes_cabina extends \Siosp\Core\Model {
         return $query->fetch_all(MYSQLI_ASSOC);
     }
 
+    public static function update($id, $args) {
+        print_r($args);
+        $ms = self::connectDb();
+        $values = [];
+        foreach (self::getFields() as $field) {
+            if (isset($args[$field])) {
+                $values[] = sprintf("%s = '%s'", $field, $ms->mysqli->real_escape_string($args[$field])
+                );
+            }
+        }
+        $sql = sprintf("update %s set %s where %s = '%s'", self::getTable(), implode(", ", $values), self::getIdTable(), $ms->mysqli->real_escape_string($id)
+        );
+        $ms->query($sql);
+        return [
+            'success' => true,
+            'affected' => $ms->mysqli->affected_rows
+        ];
+    }
+
 }

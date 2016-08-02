@@ -93,35 +93,65 @@ function getComandancia() {
         },
         submitHandler: function () {
             $('.input_disablet').attr('disabled', false);
-            $.ajax({
-                url: "/transito/views/tm_selector.php",
-                type: 'POST',
-                data: {opc: 1},
-                dataType: 'JSON',
-                async: false,
-                success: function (data, textStatus, jqXHR) {
-                    console.log(textStatus);
-                    $('#folio_evento').val(data.folio_evento);
-                    $('#feccre').val(data.feccre);
-                    var form = $('#frm_captura').serialize();
-                    $.ajax({
-                        url: "/transito/api/index.php/transito/Accidentes_cabina",
-                        type: 'POST',
-                        data: form,
-                        dataType: 'JSON',
-                        async: false,
-                        success: function (data1, textStatus, jqXHR) {
-                            console.log(textStatus);
-                            window.scrollTo(0, 0);
-                            $("#contenido").empty();
-                            alertify.alert('SIOSP - TRANSITO', '<center>Accidente Guardado: <strong>' + data.folio_evento + '</strong></center>');
-                        }
-                    });
-                }
-            });
+            var control = $('#control').val();
+            if (control !== '0') {
+                var folio = $('#folio_evento').val();
+                $('#useradd').attr('disabled', true);
+                $('#usermod').attr('disabled', false);
+                $('#folio_evento').attr('disabled', true);
+                $('#feccre').attr('disabled', true);
+                $('#fecmod').attr('disabled', false);
+                $.ajax({
+                    url: "/transito/views/tm_selector.php",
+                    type: 'POST',
+                    dataType: 'TEXT',
+                    data: {opc: 3},
+                    async: false,
+                    success: function (data, textStatus, jqXHR) {
+                        $('#fecmod').val(data);
+                    }
+                });
 
+                var form = $('#frm_captura').serialize();
+                $.ajax({
+                    url: "/transito/api/index.php/transito/Accidentes_cabina/" + $('#id_acc').val(),
+                    type: 'PUT',
+                    data: form,
+                    async: false
+                });
+                window.scrollTo(0, 0);
+                $("#contenido").empty();
+                alertify.alert('SIOSP - TRANSITO', '<center><strong>Accidente Modificado</strong></center>');
+                $('#contenido').load('views/tm_eventos_pendientes.php');
+            } else {
+                $.ajax({
+                    url: "/transito/views/tm_selector.php",
+                    type: 'POST',
+                    data: {opc: 1},
+                    dataType: 'JSON',
+                    async: false,
+                    success: function (data, textStatus, jqXHR) {
+                        console.log(textStatus);
+                        $('#folio_evento').val(data.folio_evento);
+                        $('#feccre').val(data.feccre);
+                        var form = $('#frm_captura').serialize();
+                        $.ajax({
+                            url: "/transito/api/index.php/transito/Accidentes_cabina",
+                            type: 'POST',
+                            data: form,
+                            dataType: 'JSON',
+                            async: false,
+                            success: function (data1, textStatus, jqXHR) {
+                                console.log(textStatus);
+                                window.scrollTo(0, 0);
+                                $("#contenido").empty();
+                                alertify.alert('SIOSP - TRANSITO', '<center>Accidente Guardado: <strong>' + data.folio_evento + '</strong></center>');
+                            }
+                        });
+                    }
+                });
+            }
         }
-
     });
     //</editor-fold>
 
@@ -220,7 +250,7 @@ function getComandancia() {
         $form.find('select.unidades').fillSelect({
             'api': apiUnidad,
             'text': 'No_Unidad',
-            'value': 'Sector'
+            'value': 'No_Unidad'
         }).done(function () {
             x = $fillDelegacion.resolve();
         });
@@ -246,7 +276,20 @@ function getComandancia() {
             allowClear: false
         }).on("change", function (e) {
             $('#unidad').val($('#unidades option:selected').text());
-            $('#sector').val($('#unidades').val());
+            $.ajax({
+                url: "api/index.php/transito/Cat_unidad/?unidad=" + $('#unidades option:selected').val(),
+                type: 'GET',
+                dataType: 'JSON',
+                async: false,
+                success: function (data, textStatus, jqXHR) {
+                    $('#sector').val(data[0]['Sector']);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
         });
         $('#fecha').datetimepicker({
             mask: '9999-19-39',
@@ -284,7 +327,23 @@ function getComandancia() {
                     $('#calle2').val(data[0].calle2).trigger("change");
                     $('#colonia').val(data[0].colonia).trigger("change");
                     $('#agente').val(data[0].nombre_agente).trigger("change");
-
+                    $('#unidades').val(data[0].unidad).trigger("change");
+                    $('#fecha').val(data[0].fecha).trigger("change");
+                    $('#hora').val(data[0].hora).trigger("change");
+                    $('#reporta').val(data[0].reporta).trigger("change");
+                    $('#ref').val(data[0].ref).trigger("change");
+                    $('#no_vehiculos_participantes').val(data[0].no_vehiculos_participantes).trigger("change");
+                    $('#no_de_detenidos').val(data[0].no_de_detenidos).trigger("change");
+                    $('#no_de_heridos').val(data[0].no_de_heridos).trigger("change");
+                    $('#no_de_muertos').val(data[0].no_de_muertos).trigger("change");
+                    $('#normales').val(data[0].normales).trigger("change");
+                    $('#ei').val(data[0].ei).trigger("change");
+                    $('#ec').val(data[0].ec).trigger("change");
+                    $('#observaciones_evento').html(data[0].observaciones_evento).trigger("change");
+                    $('#servicio').val(data[0].servicio).trigger("change");
+                    if (data[0].servicio === "PUBLICO") {
+                        $('#ckb_servicio').attr('checked', true);
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(jqXHR);
@@ -292,6 +351,13 @@ function getComandancia() {
                     console.log(errorThrown);
                 }
             });
+
+            if (control == '2') {
+                console.log('si');
+                $('#frm_captura').find('input, textarea, button, select').attr('disabled', true);
+                $('#guardar').hide();
+                $('#cancelar').hide();
+            }
         }
         //</editor-fold> 
 
