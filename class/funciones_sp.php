@@ -91,13 +91,12 @@ class funciones_sp {
                         tb_usuarios
                 WHERE
                         tb_usuarios.usuario = '$user';";
-        $res = $mysql->query($sql);        
+        $res = $mysql->query($sql);
         $row = $mysql->f_array($res);
         $mysql->close();
         return $row[0];
     }
-    
-    
+
     function getColonia($id) {
         $mysql = new con_mysql;
         $mysql->connect();
@@ -108,9 +107,62 @@ class funciones_sp {
                 WHERE
                         COLONIAS.ID = '$id';";
         $res = $mysql->query($sql);
-        $row = $mysql->f_array($res);        
+        $row = $mysql->f_array($res);
         $mysql->close();
         return $row[0];
+    }
+
+    function getBusquedaEventosAcc($filtro) {
+        $mysql = new con_mysql;
+        $mysql->connect();
+        $sql = "
+            SELECT
+                    accidentes_cabina.id,
+                    accidentes_cabina.folio_evento,
+                    accidentes_cabina.fecha,
+                    accidentes_cabina.hora,
+                    accidentes_cabina.delegacion,
+                    accidentes_cabina.comandancia,
+                    accidentes_cabina.turno,
+                    accidentes_cabina.clasificacion_de_accidente,
+                    accidentes_cabina.calle1,
+                    accidentes_cabina.calle2,
+                    accidentes_cabina.ref,
+                    accidentes_cabina.colonia,
+                    accidentes_cabina.no_vehiculos_participantes,
+                    accidentes_cabina.no_de_detenidos,
+                    accidentes_cabina.no_de_heridos,
+                    accidentes_cabina.no_de_muertos,
+                    accidentes_cabina.nombre_agente,
+                    accidentes_cabina.gafete_agente,
+                    accidentes_cabina.unidad,
+                    accidentes_cabina.sector,
+                    accidentes_cabina.observaciones_evento,
+                    accidentes_cabina.activo,
+                    accidentes_cabina.tipo_evento,
+                    accidentes_cabina.feccre,
+                    accidentes_cabina.fecmod,
+                    accidentes_cabina.useradd,
+                    accidentes_cabina.usermod,
+                    accidentes_cabina.id_unico,
+                    accidentes_cabina.latitud,
+                    accidentes_cabina.longitud,
+                    accidentes_cabina.reporta,
+                    accidentes_cabina.normales,
+                    accidentes_cabina.ei,
+                    accidentes_cabina.ec,
+                    accidentes_cabina.tipo_accidente,
+                    accidentes_cabina.servicio,
+                    accidentes_cabina.grua,
+                    accidentes_cabina.no_de_spublico
+            FROM
+                    accidentes_cabina limit 2000";
+        $res = $mysql->query($sql);
+        $results = array();
+        while ($row = $mysql->f_array($res))
+            array_push($results, $row);
+        $mysql->close();
+        return $results;
     }
 
 }

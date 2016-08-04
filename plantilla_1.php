@@ -18,7 +18,8 @@ $permi = new cls_Consultas();
 $aux = $obj_con->fn_getUsuarioFull($_POST['usuario'], $_POST['password']);
 if ($aux == 0) {
     header('Location: index.php');
-}
+} 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,7 +64,6 @@ if ($aux == 0) {
           </script>
          */
         ?>
-
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
         <script src="bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js" type="text/javascript"></script>
         <script src="js/select2-master/dist/js/select2.full.js?<?= time() ?>"></script>
@@ -73,8 +73,8 @@ if ($aux == 0) {
         <script src="js/siosp/utils/SimpleForm.js?<?= time() ?>" type="text/javascript"></script>
 
         <script src="js/siosp/academia.js" type="text/javascript"></script>
-
-
+        
+        
         <script src="js/datetime/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
         <link href="js/datetime/jquery.datetimepicker.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/alertifyjs/alertify.min.js" type="text/javascript"></script>
@@ -82,12 +82,7 @@ if ($aux == 0) {
         <link href="js/alertifyjs/css/themes/default.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript"></script>
         <link href="js/jquery-validation-1.15.0/demo/css/screen.css" rel="stylesheet" type="text/css"/>
-
-
-
-
-
-
+        
     </head>
 
     <body>
@@ -105,7 +100,7 @@ if ($aux == 0) {
                 <div class="datos">
                     Bienvenido: <?php echo $_SESSION['nombre']; ?><br/>
                     Usuario: <?php echo $_SESSION['user']; ?><br/>
-                    <span class="salir"><a href="salir.php" onclick="salirB();">Cerrar sesión</a></span>
+                    <span class="salir"><a href="salir.php" onclick="salirB();">Cerrar sesion</a></span>
                 </div>
 
             </div>
@@ -190,10 +185,6 @@ echo $obj_con->getPermisos_js($_SESSION['perfil']);
         function salirB() {
             bandera = true;
         }
-        function MatarSession() {
-            alert('POR SEGURIDAD SE CERRARA LA SESION');
-            location.href = "index.php";
-        }
         $(document).ready(function () {
 
             $('#btn_ok').click(function () {
@@ -223,5 +214,4 @@ echo $obj_con->getPermisos_js($_SESSION['perfil']);
 
 
     </script>
-
 </html>

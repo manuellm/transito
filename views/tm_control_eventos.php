@@ -1,4 +1,10 @@
-<?PHP session_start(); ?>
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    echo '<script>MatarSession();</script>';
+    exit(0);
+}
+?>
 <style>
     #commentForm {
         width: 500px;
@@ -23,10 +29,6 @@
     }
 </style>
 <div class="titulo">ACCIDENTES / CONTROL DE EVENTOS</div><br>
-<div>
-    RADIO OPERACION <br/>
-    <strong>AGREGAR EVENTO</strong>
-</div>
 <div class="interior">
     <form id="frm_captura" action="#" method="POST">
         <div style="text-align: right;">
