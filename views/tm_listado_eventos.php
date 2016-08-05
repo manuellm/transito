@@ -1,99 +1,67 @@
-<div class="titulo">ACCIDENTES / LISTADO PARTES</div><br>
-<div>
-    RADIO OPERACION <br>
-    <strong>PARTES PENDIENTES</strong>
-</div><br>
+<div class="titulo">ACCIDENTES / LISTADO PARTES</div>
 <div class="interior">
-    <form action="" id="" method="POST"> 
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-            <div  class="encabezado">
-                BUSCAR EVENTOS
-            </div>
-            <tbody>
-                <tr>
-                    <td>Fecha desde:<br>
-                        <input type="text" class="#" id="">
-                    </td>                    
-                    <td>Fecha Hasta:<br>
-                        <input type="text" class="#" id="">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Status: <br>
-                        <select>
-                            <option value=""> -- Seleccione -- </option>
-                        </select>
-                    </td>
-                    <td>
-                        Folio:<br>
-                        <input type="text" class="#" id="">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Delegacion: <br>
-                        <select>
-                            <option value=""> -- Seleccione -- </option>
-                        </select>
-                    </td>
-                    <td>
-                        Comandancia: <br>
-                        <select>
-                            <option value=""> -- Seleccione -- </option>
-                        </select>
-                    </td>
-                </tr>            	
-                <tr>
-                    <td>
-                        Turno: <br>
-                        <select>
-                            <option value=""> -- Seleccione -- </option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="submit" class="#" id="" value="Buscar">
-                    </td>
-                </tr>
-            </tbody>
+    <form id="frm_busqueda">
+        <div  class="encabezado">
+            FILTRO
+        </div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0"> <tr>
+                <td>Folio:</td>
+                <td>Status:</td>
+                <!--<td>Delegacion:</td>-->
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="numero" id="folio" name="folio">
+                </td>
+                <td>
+                    <select id="status" name="status">
+                        <option value="2">TODOS</option>
+                        <option value="1">ACTIVOS</option>
+                        <option value="0">INACTIVOS</option>
+                    </select>
+                </td>
+                <td>
+<!--                    <select>
+                        <option value=""> -- Seleccione -- </option>
+                    </select>-->
+                </td>
+            </tr>
+<!--            <tr>
+                <td>Comandancia:</td>
+                <td>Turno:</td>
+                <td></td>
+            </tr>     
+            <tr>
+                <td>
+                    <select>
+                        <option value=""> -- Seleccione -- </option>
+                    </select>
+                </td>
+                <td>
+                    <select>
+                        <option value=""> -- Seleccione -- </option>
+                    </select>
+                </td>
+                <td>
+            </tr>           -->
+            <tr>
+                <td>Fecha desde:</td>                    
+                <td>Fecha Hasta:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="" id="f1" name="f1"/></td>                    
+                <td><input type="text" class="" id="f2" name="f2"/></td>
+                <td></td>
+            </tr>
+            <tr>              
+                <td colspan="3">
+                    <input type="button" class="" id="btn_buscar" value="Buscar"/>
+                </td>
+            </tr>
         </table>
-    </form><br>
-
-    <a href="#"><img width="50" src="img/xlsx.png" title="Exportar excel"></a>
-    <a href="#"><img width="50" src="img/importar.png" title="Importar accidente"></a>
-
-
-    <div  style="width:100%; overflow: auto; scrollbar:#6cb9ff;">
-        <table width="100%" border="1" cellpadding="0" cellspacing="0">
-            <tbody> 
-                <tr style="background-color: #006a91;color: #fff;">
-                    <th>Opcion</th>
-                    <th>Folio</th>
-                    <th>Fecha</th>
-                    <th>Agente</th>
-                    <th>Unidad</th>
-                    <th>Clasificación</th>
-                    <th>Evento</th>
-                    <th>Capturo</th>
-                </tr>
-                <tr style="color: #CCC;">
-                    <td>
-                        <a href="#" title="EDITAR PARTE"><img src="img/editar.png"></a>
-                        <a href="#" title="VER PARTE FRONTAL"><img src="img/ver.png"></a>
-                        <a href="#" title="VER PARTE POSTERIOR"><img src="img/ver.png"></a>
-                        <a href="#" title="ELIMINAR PARTE"><img src="img/eliminar.png"></a>
-                        <a href="#" title="VER PARTE"><img src="img/ver.png"></a>
-                        <a href="#" title="VER PARTE"><img src="img/descargar.png"></a>
-                    </td>
-                    <td>Folio</td>
-                    <td>Fecha</td>
-                    <td>Agente</td>
-                    <td>Unidad</td>                
-                    <td>Clasificación</td>
-                    <td>Evento</td>
-                    <td>Capturo</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    </form>
+    <div id="resultado"></div>
 </div>
+<script src="js/siosp/views/tm_listado_eventos.js" type="text/javascript"></script>

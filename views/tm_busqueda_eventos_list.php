@@ -91,7 +91,7 @@ $paging->ejecutar();
 ?>
 <div  class="encabezado">RESULTADO</div>
 <div  style="width:100%; overflow: auto; scrollbar:#6cb9ff;">
-    <table width="100%" border="1" cellpadding="0" cellspacing="0">
+    <table width="100%" border="1" cellpadding="0" cellspacing="0" style="text-align: center;">
         <tr style="background-color: #006a91;color: #fff;">
             <th>Opcion</th>
             <th>Fecha</th>
@@ -106,18 +106,18 @@ $paging->ejecutar();
         while ($row = $paging->fetchResultado()) {
             ?>
             <tr>
-                <td>
+                <td style="padding: 20px;">
                     <a href="#" onclick="edit_folio(<?= $row['id']; ?>);" title="EDITAR EVENTO"><img src="img/editar.png"></a>
                     <a href="#" onclick="delete_folio(<?= $row['id']; ?>);" title="ELIMINAR EVENTO"><img src="img/eliminar.png"></a>
                     <a href="#" onclick="view_folio(<?= $row['id']; ?>);" title="VER EVENTO"><img src="img/ver.png"></a>
                 </td>
-                <td><?= $row['fecha']; ?></td>
-                <td><?= $row['hora']; ?></td>
-                <td><?= $row['folio_evento']; ?></td>
-                <td><?= $row['comandancia']; ?></td>
-                <td><?= $row['calle1']; ?></td>
-                <td><?= $row['nombre_agente']; ?></td>
-                <td><?= $row['tipo_evento']; ?></td>
+                <td style="vertical-align:middle"><?= $row['fecha']; ?></td>
+                <td style="vertical-align:middle"><?= $row['hora']; ?></td>
+                <td style="vertical-align:middle"><?= $row['folio_evento']; ?></td>
+                <td style="vertical-align:middle"><?= $row['comandancia']; ?></td>
+                <td style="vertical-align:middle"><?= $row['calle1']; ?></td>
+                <td style="vertical-align:middle"><?= $row['nombre_agente']; ?></td>
+                <td style="vertical-align:middle"><?= $row['tipo_evento']; ?></td>
             </tr>
             <?PHP
         }
