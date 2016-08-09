@@ -10,10 +10,10 @@ session_destroy(); //Destruye cualquier sesiòn completa anterior
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SEGURIDAD PUBLICA</title>
         <link href="css/css_estilos.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/md5.js"></script>
-<script type="text/javascript" src="js/js_relocate.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/md5.js"></script>
+        <script type="text/javascript" src="js/js_relocate.js"></script>
     </head>
     <body>
         <div class="cuerpo">
@@ -60,14 +60,14 @@ session_destroy(); //Destruye cualquier sesiòn completa anterior
 
             <!-- Pie de página -->
             <div class="pie">
-               
+
             </div>
         </div>
     </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#btn_entrar').click(function() {
+    $(document).ready(function () {
+        $('#btn_entrar').click(function () {
             var password = md5($("#password").val());
             var usuario = $("#usuario").val();
             $.ajax({
@@ -76,7 +76,7 @@ session_destroy(); //Destruye cualquier sesiòn completa anterior
                 data: "password=" + password + "&usuario=" + usuario,
                 dataType: "json",
                 async: true,
-                success: function(datos) {
+                success: function (datos) {
                     var arr = eval(datos);
                     if (arr.url == "1") {
                         relocate('plantilla.php', {'usuario': '' + usuario, 'password': '' + password});
@@ -104,7 +104,7 @@ session_destroy(); //Destruye cualquier sesiòn completa anterior
                         return;
                     }
                 },
-                error: function() {
+                error: function () {
                     alert("error");
                 }
             });

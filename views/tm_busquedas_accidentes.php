@@ -1,260 +1,159 @@
-<div class="titulo">ACCIDENTES / BUSQUEDAS</div><br>
-
-<div>      
-  <input type="radio" name="tipo_attach" onclick="toggle(this)" value="a" checked> Conductor <br>
-  <input type="radio" name="tipo_attach" onclick="toggle(this)" value="b"> Lesionado <br>
-  <input type="radio" name="tipo_attach" onclick="toggle(this)" value="c"> Detenido <br>
-  <input type="radio" name="tipo_attach" onclick="toggle(this)" value="d"> Vehiculo <br>
-  <input type="radio" name="tipo_attach" onclick="toggle(this)" value="e"> Lista de accidentes <br>  
-</div>
-
-<div id="uno" style="display:block">
-  <div class="interior">
-    <form action="" id="" method="POST"> 
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <div  class="encabezado">
-            BUSQUEDA POR CONDUCTOR
+<div class="titulo">ACCIDENTES / BUSQUEDAS</div>
+<div class="interior">
+    <div  class="encabezado">
+        BUSQUEDAS
+    </div>
+    <div>      
+        <label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="a" checked> Conductor</label><br/>
+        <label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="b"> Lesionado</label><br/>
+        <label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="c"> Detenido</label><br/>
+        <label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="d"> Vehiculo</label><br/>
+        <label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="e"> Lista de accidentes</label>
+    </div>
+    <form id="frm_busqueda">
+        <div id="uno" style="display:block">
+            <div  class="encabezado">
+                BUSQUEDA POR CONDUCTOR
+            </div>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>Nombre:</td>                    
+                    <td>Apellido paterno:</td>
+                    <td>Apellido materno:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="nombre_con" name="nombre_con"/></td>                    
+                    <td><input type="text" class="" id="ap_con" name="ap_con"/></td>
+                    <td><input type="text" class="" id="am_con" name="am_con"/></td>
+                </tr>
+                <tr>
+                    <td>Calle:</td>
+                    <td>Colonia:</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="calle_con" name="calle_con"/></td>
+                    <td><input type="text" class="" id="colonia_con" name="colonia_con"/></td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
         </div>
-          <tbody>
-              <tr>
-                <td>
-                  Nombre:<br>
-                  <input type="text" class="#" id="">
-                </td>                    
-                <td>
-                  Apellido paterno:<br>
-                  <input type="text" class="#" id="">
-                </td>
-                <td>
-                  Apellido materno:<br>
-                  <input type="text" class="#" id="">
-                </td>
-              </tr>
-              
-              <tr>
-                <td>
-                  Calle:<br>
-                  <input type="text" class="#" id="">
-                </td>
-                <td>
-                  Colonia:<br>
-                  <input type="text" class="#" id="">
-                </td>
-                <td><br>
-                    <input type="submit" class="#" id="" value="Buscar">
-                </td>
-            </tr>
-          </tbody>
-      </table>
-    </form><br>
-  </div>
-</div>
- 
-<div id="dos" style="display:none">
-  <div class="interior">
-    <form action="" id="" method="POST"> 
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <div  class="encabezado">
-            LESIONADO
+        <div id="dos" style="display:none">
+            <div  class="encabezado">
+                LESIONADO
+            </div>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>Nombre:</td>                    
+                    <td>Años:</td>
+                    <td>Domicilio:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="nombre_les" name="nombre_les" /></td>                    
+                    <td><input type="text" class="numero" id="anio_les" name="anio_les" /></td>
+                    <td><input type="text" class="" id="domicilio_les" name="domicilio_les" /></td>
+                </tr>
+                <tr>
+                    <td>Traslado a:</td>
+                    <td></td>
+                    <td></td>                    
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="traslado_les" name="traslado_les" /></td>
+                    <td></td>
+                    <td></td>                    
+                </tr>
+            </table>
         </div>
-          <tbody>
-              <tr>
-                <td>
-                  Nombre:<br>
-                  <input type="text" class="#" id="">
-                </td>                    
-                <td>
-                  Años:<br>
-                  <input type="text" class="#" id="">
-                </td>
-              </tr>
-              
-              <tr>
-                <td>
-                  Domicilio:<br>
-                  <input type="text" class="#" id="">
-                </td>
-                <td>
-                  Traslado a:<br>
-                  <input type="text" class="#" id="">
-                </td>
-            </tr>
-            <tr>
-                <td><br>
-                    <input type="submit" class="#" id="" value="Buscar">
-                </td>
-            </tr>
-          </tbody>
-      </table>
-    </form><br>
-  </div>
-</div>
+        <div id="tres" style="display:none">
+            <div  class="encabezado">
+                DETENIDO
+            </div>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>Nombre:</td>                    
+                    <td>Años:</td>                    
+                    <td>Domicilio:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="nombre_det" name="nombre_det"/></td>                    
+                    <td><input type="text" class="numero" id="anio_det" name="anio_det"/></td>
 
-<div id="tres" style="display:none">
-  <div class="interior">
-    <form action="" id="" method="POST"> 
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <div  class="encabezado">
-            DETENIDO
+                    <td><input type="text" class="" id="domicilio_det" name="domicilio_det"/></td>
+                </tr>
+                <tr>
+                    <td>Detenido en:</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="detenido_det" name="detenido_det"/></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
-          <tbody>
-            <tr>
-              <td>
-                Nombre:<br>
-                <input type="text" class="#" id="">
-              </td>                    
-              <td>
-                Años:<br>
-                <input type="text" class="#" id="">
-              </td>
-            </tr>
-            
-            <tr>
-              <td>
-                Domicilio:<br>
-                <input type="text" class="#" id="">
-              </td>
-              <td>
-                Detenido en:<br>
-                <input type="text" class="#" id="">
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><br>
-                  <input type="submit" class="#" id="" value="Buscar">
-              </td>
-            </tr>
-          </tbody>
-      </table>
-    </form><br>
-  </div>
-</div>
+        <div id="cuatro" style="display:none">
+            <div  class="encabezado">
+                VEHICULO
+            </div>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>Marca:</td>                    
+                    <td>Submarca:</td>
+                    <td>Placas:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="marca" name="marca"></td>                    
+                    <td><input type="text" class="" id="submarca" name="submarca"></td>
+                    <td><input type="text" class="" id="placas" name="placas"></td>
+                </tr>
 
-<div id="cuatro" style="display:none">
-  <div class="interior">
-    <form action="" id="" method="POST"> 
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <div  class="encabezado">
-          VEHICULO
+                <tr>
+                    <td>Serie:</td>
+                    <td>No economico:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="serie" name="serie"></td>
+                    <td><input type="text" class="" id="noeconomico" name="noeconomico"></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
-          <tbody>
-            <tr>
-              <td>
-                Marca:<br>
-                <input type="text" class="#" id="">
-              </td>                    
-              <td>
-                Submarca:<br>
-                <input type="text" class="#" id="">
-              </td>
-            </tr>
-            
-            <tr>
-              <td>
-                Placas:<br>
-                <input type="text" class="#" id="">
-              </td>
-              <td>
-                Seria:<br>
-                <input type="text" class="#" id="">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                No economico:<br>
-                <input type="text" class="#" id="">
-              </td>
-              <td><br>
-                  <input type="submit" class="#" id="" value="Buscar">
-              </td>
-            </tr>
-          </tbody>
-      </table>
-    </form><br>
-  </div>
-</div>
-
-<div id="cinco" style="display:none">
-  <div class="interior">
-    <form action="" id="" method="POST"> 
-      <table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <div  class="encabezado">
-          LISTA DE ACCIDENTES
+        <div id="cinco" style="display:none">
+            <div  class="encabezado">
+                LISTA DE ACCIDENTES
+            </div>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">                
+                <tr>
+                    <td>Folio:</td>
+                    <td>Calle:</td>           
+                    <td>Colonia:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="numero" id="folio_la" name="folio_la"/></td>
+                    <td><input type="text" class="" id="calle_la" name="calle_la"/></td>
+                    <td><input type="text" class="" id="colonia_la" name="colonia_la"/></td>
+                </tr>
+                <tr>
+                    <td>Fecha desde:</td>                    
+                    <td>Fecha hasta:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="" id="f1" name="f1"/></td>                    
+                    <td><input type="text" class="" id="f2" name="f2"/></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
-          <tbody>
-            <tr>
-              <td>
-                Fecha desde:<br>
-                <input type="text" class="#" id="">
-              </td>                    
-              <td>
-                Fecha hasta:<br>
-                <input type="text" class="#" id="">
-              </td>
-            </tr>
-            
-            <tr>
-              <td>
-                Folio:<br>
-                <input type="text" class="#" id="">
-              </td>
-              <td>
-                Calle:<br>
-                <input type="text" class="#" id="">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Colonia:<br>
-                <input type="text" class="#" id="">
-              </td>
-              <td><br>
-                  <input type="submit" class="#" id="" value="Buscar">
-              </td>
-            </tr>
-          </tbody>
-      </table>
-    </form><br>
-  </div>
-</div>
-
-<script type="text/javascript">
-        function toggle(elemento) {
-          if(elemento.value=="a") {
-              document.getElementById("uno").style.display = "block";
-              document.getElementById("dos").style.display = "none";
-              document.getElementById("tres").style.display = "none";
-              document.getElementById("cuatro").style.display = "none";
-              document.getElementById("cinco").style.display = "none";
-           }
-           else if(elemento.value=="b") {
-              document.getElementById("uno").style.display = "none";
-              document.getElementById("dos").style.display = "block";
-              document.getElementById("tres").style.display = "none";
-              document.getElementById("cuatro").style.display = "none";
-              document.getElementById("cinco").style.display = "none";
-           }
-           else if(elemento.value=="c") {
-              document.getElementById("uno").style.display = "none";
-              document.getElementById("dos").style.display = "none";
-              document.getElementById("tres").style.display = "block";
-              document.getElementById("cuatro").style.display = "none";
-              document.getElementById("cinco").style.display = "none";
-           }
-           else if(elemento.value=="d") {
-              document.getElementById("uno").style.display = "none";
-              document.getElementById("dos").style.display = "none";
-              document.getElementById("tres").style.display = "none";
-              document.getElementById("cuatro").style.display = "block";
-              document.getElementById("cinco").style.display = "none";
-           }
-           else if(elemento.value=="e") {
-              document.getElementById("uno").style.display = "none";
-              document.getElementById("dos").style.display = "none";
-              document.getElementById("tres").style.display = "none";
-              document.getElementById("cuatro").style.display = "none";
-              document.getElementById("cinco").style.display = "block";
-           }
-        }
-</script>
+        <br/>
+        <input type="hidden" value="a" id="ck_busqueda" name="ck_busqueda"/>
+        <input type="button" id="btn_buscar" value="Buscar"/>
+    </form>
+    <div id="resultado">
+    </div>
+    <script src="js/siosp/views/tm_busquedas_accidentes.js" type="text/javascript"></script>
