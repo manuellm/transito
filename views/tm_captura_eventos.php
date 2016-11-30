@@ -1,132 +1,144 @@
 <style>
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
+    #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+    }
 
-    </style>
+</style>
 <div class="titulo">ACCIDENTES / CAPTURA PARTES</div><br>
-<div>
-    RADIO OPERACION <br>
-    <strong>AGREGAR EVENTO</strong>
-</div>
-
 <div class="interior">
-    <form action="" id="" method="POST">
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <form id="frm_captura">
         <div  class="encabezado">
             DATOS GENERALES
         </div>
-        <tbody>            
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
-                <td>Folio propuesto:<br>
-                    <input type="text" class="#" id=""></td>
+                <td>Folio:</td>
+                <td>Delegacion:</td>
+                <td>Comandancia:</td>
+            </tr>
+            <tr>
+                <td><input type="text" class="" id="folio_accidente" name="folio_accidente" disabled value="<?= $_REQUEST['folio']; ?>"/></td>
                 <td>
-                    Delegacion: <br>
-                    <select>
-                    <option value=""> -- Seleccione -- </option>
+                    <select class="delegacion" name="delegacion" id="delegacion">
+                        <option value=""> -- Seleccione -- </option>
+                    </select>
+                </td>
+                <td>
+                    <select class="comandancia" name="comandancia" id="comandancia">
+                        <option value=""> -- Seleccione -- </option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <td>
-                    Comandancia:<br>
-                    <select>
-                    <option value=""> -- Seleccione -- </option>
-                    </select>
-                </td>
-                <td>
-                    Turno: <br>
-                    <select>
-                    <option value=""> -- Seleccione -- </option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Fecha:<br>
-                    <input type="text" class="#" id="">
-                </td>
-                
-                <td>Hora.<br>
-                    <input type="text" class="#" id="">
-                </td>
+                <td>Turno:</td>
+                <td>Fecha:</td>
+                <td>Hora:</td>
             </tr>
             <tr>
                 <td>
-                    Calificacion: <br>
-                    <select>
-                    <option value=""> -- Seleccione -- </option>
+                    <select class="turno" name="turno" id="turno">
+                        <option value=""> -- Seleccione -- </option>
+                    </select>
+                </td>
+                <td><input type="text" id="fecha" name="fecha" value="<?= date('Y-m-d'); ?>" style="width:80px;"/></td>
+                <td><input type="text"  id="hora" name="hora" value="<?= date('H:i'); ?>" style="width:40px;" /></td>
+            </tr>
+            <tr>
+                <td>Calificacion:</td>
+                <td>Tipo de choque:</td>
+                <td>Colonia:</td>
+            </tr>  
+            <tr>
+                <td>
+                    <select class="clas_accidente" name="clasificacion" id="clasificacion">
+                        <option value=""> -- Seleccione -- </option>
                     </select>
                 </td>
                 <td>
-                    Tipo de choque: <br>
-                    <select>
-                    <option value=""> -- Seleccione -- </option>
+                    <select class="tipo_accidente" name="tipo_choque" id="tipo_choque">
+                        <option value=""> -- Seleccione -- </option>
                     </select>
+                </td>
+                <td>
+                    <select class="colonia" name="colonia" id="colonia">
+                        <option value=""></option>
+                    </select>
+
                 </td>
             </tr>    
             <tr>
-                <td>Calle1:<br>
-                    <input type="text" class="#" id="">
-                </td>
-                
-                <td>Calle 2:<br>
-                    <input type="text" class="#" id="">
-                </td>
+                <td>Calle1:</td>
+                <td>Calle 2:</td>
+                <td>Freante a numero:</td>    
             </tr>
-            <tr>     
-                <td>Freante a numero:<br>
-                    <input type="text" class="#" id="">
-                </td>    
-                <td>Colonia.<br>
-                    <input type="text" class="#" id="">
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-            <tbody>
-            <div  class="encabezado">
-                <VAR>UBICACION</VAR>
-            </div>
-            <tr>                
-                <td>Latitud:<br>
-                    <input type="text" id="lat" value="">
-                </td>    
-                <td>Longitud.<br>
-                    <input type="text" id="lon" value="">
-                </td>
-            </tr>
-            </tbody>
-        </table><br>
-
-
-    <div id="map" style="Width: 100%; height: 600px;"></div><br>
-       
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-            <tbody>
-                <td>Estado:<br>
-                    <input type="text" class="#" id="">
-                </td>    
-                <td>Municipio:<br>
-                    <input type="text" class="#" id=""></td>
+            <tr>
                 <td>
-            </tbody>
+                    <select class="calle1" name="calle1" id="calle1">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select class="calle2" name="calle2" id="calle2">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td><input type="text" class="" id="frentea" name="frentea" /></td>    
+
+            </tr>
         </table>
-      
+
         <div  class="encabezado">
-            <VAR>VEHICULOS Y CONDUCTORES INVOLUCRADOS</VAR>
+            UBICACION
         </div>
-           
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>                
+                <td style="width: 100px;">Latitud:</td>    
+                <td style="width: 100px;">Longitud:</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>                
+                <td><input type="text" id="lat" name="latitud" value="" disabled></td>    
+                <td><input type="text" id="lon" name="longitud" value="" disabled></td>
+                <td><input type="button" id="btn_mapa" value="Mapa"/></td>
+            </tr>
+        </table>
+
+        <div id="map" style="Width: 100%; height: 600px; display: none; padding-top: 20px; "></div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width: 100px;">Estado:</td>    
+                <td style="width: 100px;">Municipio:</td>
+                <td></td>
+            </tr>       
+            <tr>
+                <td>
+                    <select class="estado" name="estado" id="estado">
+                        <option value=""></option>
+                    </select>
+                </td>    
+                <td>
+                    <select class="municipio" name="municipio" id="municipio">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td></td>
+        </table>
+
+        <div  class="encabezado">
+            VEHICULOS Y CONDUCTORES INVOLUCRADOS
+        </div>
+
         <div  style="width:100%; overflow: auto; scrollbar:#6cb9ff;">
             <br><br>
             <table width="100%" border="1" cellpadding="0" cellspacing="0">
@@ -151,353 +163,360 @@
                         <td>Modelo</td>
                         <td>Color</td>
                     </tr>
-                 </tbody>
+                </tbody>
             </table>
-                <div id="vehiculos" style="display:none">
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                      Interviene como:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>                    
-                                    <td>
-                                        Clas. Vehículo:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Marca:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Submarca:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>                   
-                                    <td>
-                                        Modelo:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Tipo:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Datos adicionales:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Placas:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      No. Serie:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Color:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      Detalle del color:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                        Capacidad:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Servicio:<br>
-                                        <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      No. Eco:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                        Estado:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Estado:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table><br><br>
-                        <h5>Datos de pencion</h5>
-                        <div  class="encabezado">
-                        </div>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td> <input type="checkbox" value="">Aplica</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      No. de grua:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Estado:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      No. de Inventario:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table><br><br>
-                        <h5>Datos del propietario</h5>
-                        <div  class="encabezado">
-                        </div>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td> <input type="radio" name="propietario" value=""> Nombre</td>
-                                    <td> <input type="radio" name="propietario" value=""> Razón social</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Nombre(s) o Razón social:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Apellido paterno:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Apellido materno:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Domicilio:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Telefono:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Codigo postal:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      colonia:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Municipio:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Estado:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table><br><br>
-                        <h5>Datos del conductor</h5>
-                        <div  class="encabezado">
-                        </div>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td colspan="2"><input type="checkbox" value=""> Active esta casilla si los datos del propietario son los mismos que los del conductor</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="radio" name="datos_conductor" value=""> Huir del lugar de los echos</td>
-                                    <td><input type="radio" name="datos_conductor" value=""> No proporciono</td>
-                                </tr>
-                                <tr>  
-                                    <td><input type="radio" name="datos_conductor" value=""> Veh. Estacionado</td>
-                                    <td><input type="radio" name="datos_conductor" value=""> Cancelar</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Nombre:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Apellido paterno:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Apellido materno:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Domicilio:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Edad:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                        Sexo:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Colonia:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Folio infracción:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Folio del certificado médico:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="radio" name="estado_conductor" value=""> Ebriedad completa</td>
-                                    <td><input type="radio" name="estado_conductor" value=""> Ebriedad incompleta</td>
-                                    <td><input type="radio" name="estado_conductor" value=""> bajo influjo de drogas</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="radio" name="estado_conductor" value=""> Estado normal</td>
-                                    <td><input type="radio" name="estado_conductor" value=""> Inconsciente</td>
-                                    <td><input type="radio" name="estado_conductor" value=""> Sin examen</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Estado:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Municipio:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Condiciones fisicas:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Detenido en:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        En custodia de:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        A  disposicion de:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        La persona se encontraba:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Levantado por:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Trasladado a:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Folio infracción:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                        Tipo de licencia:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Restricciones:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Vigencia:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Expedida por el Gob. del Estado de:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>                           
-                            </tbody>
-                        </table>
-                        <input type="submit" class="#" id="" value="Aceptar">
+            <div id="vehiculos" style="display:none; padding-top: 10px;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>Interviene como:</td>                    
+                        <td>Clas. Vehículo:</td>
+                        <td>Marca:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>                    
+                        <td>
+                            <select class="descveh">
+                                <option value="" > -- Seleccione -- </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="marca" id="marca" name="marca">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Submarca:</td>                   
+                        <td>Modelo:</td>
+                        <td>Tipo:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="submarca" name="submarca">
+
+                            </select>
+                        </td>                   
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <?php
+                                for ($index = (date('Y') * 1) + 1; $index >= 1950; $index--) {
+                                    echo '<option value="' . $index . '">' . $index . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="vehiculotipo">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Datos adicionales:</td>
+                        <td>Placas:</td>
+                        <td>No. Serie:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Color:</td>
+                        <td>Detalle del color:</td>
+                        <td>Capacidad:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="color">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select class="capveh">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Servicio:</td>
+                        <td>No. Eco:</td>
+                        <td>Estado:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+
+                                <option value="Servicio Particular">Servicio Particular</option>
+                                <option value="Servicio Public">ServicioPublico</option>
+                                <option value="Servicio Publico Federal">Servicio Publico Federal</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select class="estado" name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Municipio:</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="municipio" name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br>
+                <h5>Datos de pencion</h5>
+                <hr/>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td colspan="3"><input type="checkbox" value="">&nbsp;&nbsp;Aplica</td>
+                    </tr>
+                    <tr>
+                        <td>No. de grua:</td>
+                        <td>Pensión:</td>
+                        <td>No. de Inventario:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select class="pension">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                </table>
+                <br><br>
+                <h5>Datos del propietario</h5>
+                <hr/>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td><input type="radio" name="propietario" value="">&nbsp;&nbsp;Nombre</td>
+                        <td><input type="radio" name="propietario" value="">&nbsp;&nbsp;Razón social</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre(s) o Razón social:</td>
+                        <td>Apellido paterno:</td>
+                        <td>Apellido materno:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Domicilio:</td>
+                        <td>Telefono:</td>
+                        <td>Codigo postal:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>colonia:</td>
+                        <td>Estado:</td>
+                        <td>Municipio:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select class="estado" name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="municipio" name="" id="">
+                                <option value=""></option>
+                            </select>
+
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+                <h5>Datos del conductor</h5>
+                <hr/>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td colspan="3"><input type="checkbox" value="">&nbsp;&nbsp;Active esta casilla si los datos del propietario son los mismos que los del conductor</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="datos_conductor" value="">&nbsp;&nbsp;Huir del lugar de los echos</td>
+                        <td><input type="radio" name="datos_conductor" value="">&nbsp;&nbsp;No proporciono</td>
+                        <td></td>
+                    </tr>
+                    <tr>  
+                        <td><input type="radio" name="datos_conductor" value="">&nbsp;&nbsp;Veh. Estacionado</td>
+                        <td><input type="radio" name="datos_conductor" value="">&nbsp;&nbsp;Cancelar</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>Apellido paterno:</td>
+                        <td>Apellido materno:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Domicilio:</td>
+                        <td>Edad:</td>
+                        <td>Sexo:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="HOMBRE">HOMBRE</option>
+                                <option value="MUJER">MUJER</option>
+                                <option value="NO">NO</option>
+                                <option value="SE DESCONOCE">SE DESCONOCE</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Colonia:</td>
+                        <td>Folio infracción:</td>
+                        <td>Folio del certificado médico:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="estado_conductor" value="">&nbsp;&nbsp;Ebriedad completa</td>
+                        <td><input type="radio" name="estado_conductor" value="">&nbsp;&nbsp;Ebriedad incompleta</td>
+                        <td><input type="radio" name="estado_conductor" value="">&nbsp;&nbsp;bajo influjo de drogas</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="estado_conductor" value="">&nbsp;&nbsp;Estado normal</td>
+                        <td><input type="radio" name="estado_conductor" value="">&nbsp;&nbsp;Inconsciente</td>
+                        <td><input type="radio" name="estado_conductor" value="">&nbsp;&nbsp;Sin examen</td>
+                    </tr>
+                    <tr>
+                        <td>Estado:</td>
+                        <td>Municipio:</td>
+                        <td>Condiciones fisicas:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="estado" name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="municipio" name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="edoconductor" id="edoconductor" name="edoconductor">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Detenido en:</td>
+                        <td>En custodia de:</td>
+                        <td>A  disposicion de:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="detenido_en" name="detenido_en">
+                            </select>
+                        </td>
+                        <td>
+                            <select class="encustodia">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="OFICIAL CALIFICADOR EN TURNO">OFICIAL CALIFICADOR EN TURNO</option>
+                                <option value="AGENCIA DE MENORES">AGENCIA DE MENORES</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>La persona se encontraba:</td>
+                        <td>Levantado por:</td>
+                        <td>Trasladado a:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="edofisico">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="levantado_por" name="levantado_por">
+                            </select>
+                        </td>
+                        <td>
+                            <select id="trasladado_a" name="trasladado_a">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Folio infracción:</td>
+                        <td>Tipo de licencia:</td>
+                        <td>Restricciones:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select class="tipolicencia">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="restriccioneslicencia">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vigencia:</td>
+                        <td>Expedida por el Gob. del Estado de:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td></td>
+                    </tr>                           
+                </table>
+                <div style="text-align: right; padding-top: 10px;">
+                    <input type="button" class="#" id="" value="Aceptar">
                 </div>
-                <input type="button" id="agregar_vehiculos" value="Agregar"><br>
+            </div>
+            <div style="text-align: right; padding-top: 10px;">
+                <input type="button" id="agregar_vehiculos" value="Agregar">
+            </div>
             <div  class="encabezado">
-                <VAR>SALDO DE SANGRE</VAR>
+                SALDO DE SANGRE
             </div>
             <br><br>
             <table width="100%" border="1" cellpadding="0" cellspacing="0">
@@ -522,74 +541,85 @@
                         <td>Levantado por</td>
                         <td>Traslado a</td>
                     </tr>
-                 </tbody>
+                </tbody>
             </table>
-                <div id="saldo" style="display:none">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                      Nombre:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Estado fisico:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      Edad:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Nacionalidad:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      Domicilio:<br>
-                                      <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                      Levantada por:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Trasladado a:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      Adisposicion de:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                      Se encontraba:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                        <input type="button" id="" value="Aceptar">
-                </div>
-                <input type="button" id="agregar_saldo" value="Agregar"><br>
+            <div id="saldo" style="display:none; padding-top: 10px;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>Estado fisico:</td>
+                        <td>Edad:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="Lesionado">Lesionado</option>
+                                <option value="Lesionado y Detenido">Lesionado y Detenido</option>
+                                <option value="Finado">Finado</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Nacionalidad:</td>
+                        <td>Domicilio:</td>
+                        <td>Levantada por:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="EXTRANJERO">EXTRANJERO</option>
+                                <option value="MEXICANA">MEXICANA</option>
+                                <option value="SE DESCONOCE">SE DESCONOCE</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select id="levantado_por_ss" name="levantado_por_ss">
 
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Trasladado a:</td>
+                        <td>Adisposicion de:</td>
+                        <td>Se encontraba:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="trasladado_a_ss" name="trasladado_a_ss">
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="C. OFICIAL CALIFICADOR EN TURNO">C. OFICIAL CALIFICADOR EN TURNO</option>
+                                <option value="AREA ESPECIAL DE MENORES INFRACTORES">AGENCIA DE MENORES</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="edofisico">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <div style="text-align: right; padding-top: 10px;">
+                    <input type="button" id="" value="Aceptar">
+                </div>
+            </div>
+
+            <div style="text-align: right; padding-top: 10px;">
+                <input type="button" id="agregar_saldo" value="Agregar"><br>
+            </div>
             <div  class="encabezado">
-                <VAR>COMPETENCIA JUDICIAL</VAR>
+                COMPETENCIA JUDICIAL
             </div><br><br>
             <table width="100%" border="1" cellpadding="0" cellspacing="0">
                 <tbody> 
@@ -611,229 +641,232 @@
                         <td>Detenido</td>
                         <td>A disposición de</td>
                     </tr>
-                 </tbody>
+                </tbody>
             </table>
-                <div id="judicial" style="display:none">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                  Nombre:<br>
-                                  <input type="text" class="#" id="">
-                                </td>
-                                <td>
-                                  Estado fisico:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                  Edad:<br>
-                                  <input type="text" class="#" id="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                  Domicilio:<br>
-                                  <input type="text" class="#" id="">
-                                </td>
-                                <td>
-                                  Detenido en:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                  A disposicion de:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                  Se encontraba:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>                                
-                            </tr>
-                        </tbody>
-                    </table><br><br>
-                    <h5>Intervino</h5><div  class="encabezado"></div>
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Gafete:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                                <td>
-                                    Nombre:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Unidad:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                                <td>
-                                    Sector:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table><br><br>
-                    <h5>Superviso</h5><div  class="encabezado"></div>
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Gafete:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                                <td>
-                                    Agente:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Unidad:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                                <td>
-                                    Sector:<br>
-                                    <input type="text" class="#" id="">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <input type="button" id="" value="Aceptar">
-                </div>
-                <input type="button" id="agregar_judicial" value="Agregar"><br>
-        </div>
-        <table width="100%">
-            <div  class="encabezado">
-                <VAR>VEHICULOS Y CONDUCTORES INVOLUCRADOS</VAR>
-            </div>
-                <tbody>
+            <div id="judicial" style="display:none; padding-top: 20px;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>Gafete:<br>
-                            <input type="text" class="#" id="">
-                        </td>    
-                        <td>Agente.<br>
-                            <input type="text" class="#" id="">
+                        <td>Nombre:</td>
+                        <td>Estado fisico:</td>
+                        <td>Edad:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="Detenido">Detenido</option>
+                                <option value="Lesionado y Detenido">Lesionado y Detenido</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="#" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Domicilio:</td>
+                        <td>Detenido en:</td>
+                        <td>A disposicion de:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="#" id=""></td>
+                        <td>
+                            <select id="detenido_en_cj" name="detenido_en_cj">                                
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option value=""> -- Seleccione -- </option>
+                                <option value="C. OFICIAL CALIFICADOR EN TURNO">C. OFICIAL CALIFICADOR EN TURNO</option>
+                                <option value="AREA ESPECIAL DE MENORES INFRACTORES">AGENCIA DE MENORES</option>
+                                <option value="SE DESCONOCE">SE DESCONOCE</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>Unidad:<br>
-                            <input type="text" class="#" id="">
-                        </td>    
-                        <td>Sector.<br>
-                            <input type="text" class="#" id="">
-                        </td>
-                    </tr>                       
-                </tbody>
-            </table>
-            
-                <div  class="encabezado">
-                    COMPLEMENTARIOS
+                        <td>Se encontraba:</td>        
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="edofisico">
+                                <option value=""> -- Seleccione -- </option>
+                            </select>
+                        </td>       
+                        <td></td>
+                        <td></td>                         
+                    </tr>
+                </table>
+                <br><br>
+                <div style="text-align: right; padding-top: 10px;">
+                    <input type="button" id="" value="Aceptar">
                 </div>
-                <div>
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td id="p_obserbaciones" style="border-bottom: solid 1px #dedddd; background: #dedddd;"><label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="observaciones" style="display:none; background:" checked> Observaciones</label></td>
-                                    <td id="p_ficha_tecnica" style="border-bottom: solid 1px #dedddd;"><label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="ficha_tecnica" style="display:none;"> Ficha técnica</label></td>
-                                    <td id="p_croquis" style="border-bottom: solid 1px #dedddd;"><label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="croquis" style="display:none;"> Croquis</label></td>
-                                    <td id="p_investigaciones" style="border-bottom: solid 1px #dedddd;"><label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="investigaciones" style="display:none;"> Investigaciones</label></td>
-                                    <td id="p_infracciones" style="border-bottom: solid 1px #dedddd;"><label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="infracciones" style="display:none;"> Infracciones</label></td>
-                                    <td id="p_fotografias" style="border-bottom: solid 1px #dedddd;"><label><input type="radio" name="tipo_attach" onclick="toggle(this)" value="fotografias" style="display:none;"> Fotografias</label></td>
-                                </tr>
-                            </tbody>
-                    </table>                     
+            </div>
+            <div style="text-align: right; padding-top: 10px;">
+                <input type="button" id="agregar_judicial" value="Agregar">
+            </div>
+        </div>
+        <div  class="encabezado">
+            INTERVINO
+        </div>
+        <table width="100%">
+
+            <tr>
+                <td style="width: 20px;">Gafete:</td>    
+                <td>Agente:</td>                       
+                <td>Unidad:</td>  
+                <td>Sector:</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" id="gafete_agente" name="gafete_agente"/>
+                    <select class="agente" name="agente" id="agente">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td colspan="1"><input type="text" class="input_disablet" id="nombre_agente" name="nombre_agente" disabled/></td>
+                <td>
+                    <input type="hidden" id="unidad" name="unidad"/>
+                    <select class="unidades" name="unidades" id="unidades">
+                        <option value=""></option>
+                    </select>                        
+                </td>
+                <td colspan="1"><input type="text" class="input_disablet" id="sector" name="sector" disabled/></td>
+            </tr>     
+        </table>
+        <div  class="encabezado">
+            SUPERVISO
+        </div>
+        <table width="100%">
+            <tr>
+                <td style="width: 20px;">Gafete:</td>    
+                <td>Agente:</td>                       
+                <td>Unidad:</td>  
+                <td>Sector:</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" id="gafete_agente_superviso" name="gafete_agente_superviso"/>
+                    <select class="agente" name="agente_superviso" id="agente_superviso">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td colspan="1"><input type="text" class="input_disablet" id="nombre_agente_superviso" name="nombre_agente_superviso" disabled/></td>
+                <td>
+                    <input type="hidden" id="unidad_superviso" name="unidad_superviso"/>
+                    <select class="unidades" name="unidades_superviso" id="unidades_superviso">
+                        <option value=""></option>
+                    </select>                        
+                </td>
+                <td colspan="1"><input type="text" class="input_disablet" id="sector_superviso" name="sector_superviso" disabled/></td>
+            </tr>     
+
+        </table>
+
+        <div  class="encabezado">
+            COMPLEMENTARIOS
+        </div>
+        <div>
+
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Observaciones</a></li>
+                    <li><a href="#tabs-2">Ficha técnica</a></li>
+                    <li><a href="#tabs-3">Croquis</a></li>
+                    <li><a href="#tabs-4">Investigaciones</a></li>
+                    <li><a href="#tabs-5">Infracciones</a></li>
+                    <li><a href="#tabs-6">Fotografias</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <textarea style="min-width: 1000px; max-width: 1000px; min-height: 200px; max-height: 200px;"></textarea>
                 </div>
-                <div id="observaciones" style="display:block;">
-                <br><br><br>
-                    <textarea style="width: 97%; height: 200px;"></textarea>
-                    </textarea>                               
-                </div>
-                <div id="ficha_tecnica" style="display:none">
-                    <br><br><br>
+                <div id="tabs-2">
+
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Visibilidad:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    Parte del dia:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    Tipo Calle:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    No de carriles:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    Sentido de calle:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table><br><br>
-                    <h5>Estado del as calles</h5><div  class="encabezado"></div>
+                        <tr>
+                            <td>Visibilidad:</td>
+                            <td>Parte del dia:</td>
+                            <td>Tipo Calle:</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="visibilidad" id="visibilidad" name="visibilidad">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="dianoche" id="dianoche" name="dianoche">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="tipocalle" id="tipocalle" name="tipocalle">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>No de carriles:</td>
+                            <td>Sentido de calle:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="nocarriles" id="nocarriles" name="nocarriles">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="sentido" id="sentido" name="sentido">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <br/><br/>
+                    <h5>Estado del as calles</h5>
+                    <hr/>
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Alineación:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    Estado del pavimento:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    Clima:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Regulación:<br>
-                                    <select>
-                                        <option value=""> -- Seleccione -- </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table><br><br>
-                    <h5>Daños acumulados</h5><div  class="encabezado"></div>
+                        <tr>
+                            <td>Alineación:</td>
+                            <td>Estado del pavimento:</td>
+                            <td>Clima:</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="alicamino" id="alicamino" name="alicamino">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="edopavimento" id="edopavimento" name="edopavimento">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="clima" id="clima" name="clima">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Regulación:</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="regulacioncrucero" id="regulacioncrucero" name="regulacioncrucero">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <br/><br/>
+                    <h5>Daños acumulados</h5>
+                    <hr/>
                     <table width="100%" border="1" cellpadding="0" cellspacing="0">
                         <tbody> 
                             <tr style="background-color: #006a91;color: #fff;">
@@ -842,7 +875,7 @@
                                 <th>Tipo de daños</th>
                                 <th>Dueño</th>
                                 <th>Monto</th>
-                                
+
                             </tr>
                             <tr style="color: #CCC;">
                                 <td>       </td>
@@ -851,45 +884,59 @@
                                 <td>Dueño</td>
                                 <td>Monto</td>
                             </tr>
-                         </tbody>
+                        </tbody>
                     </table>
-                    
+
                     <div id="peritos" style="display: none;"><br><br>
-                    <h6>Los daños de los objetos fijos serán valuados por peritos en la materia</h6><br><br>
+                        <h6>Los daños de los objetos fijos serán valuados por peritos en la materia</h6><br><br>
                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Objetos dañados:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        Tipo de daños:<br>
-                                        <input type="text" class="#" id="">
-                                    </td>
-                                    <td>
-                                        Dueño:<br>
-                                        <select>
-                                            <option value=""> -- Seleccione -- </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Monto:<br>
-                                        <input type="text" class="#" id="">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table><br>
-                        <input type="button"  value="Agregar">
+
+                            <tr>
+                                <td>Objetos dañados:</td>
+                                <td>Tipo de daños:</td>
+                                <td>Dueño:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select  class="dano" id="dano" name="dano">
+                                        <option value=""> -- Seleccione -- </option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="#" id=""></td>
+                                <td>
+                                    <select id="dueno_o">
+                                        <option value=""></option>
+                                        <option value="C.F.E.">C.F.E.</option>
+                                        <option value="TELMEX">TELMEX</option>
+                                        <option value="MUNICIPIO">MUNICIPIO</option>
+                                        <option value="SAPAL">SAPAL</option>
+                                        <option value="PROPIEDAD PRIVADA">PROPIEDAD PRIVADA</option>
+                                        <option value="NO APLICA">NO APLICA</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Monto:</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="#" id=""></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <br/><br/>
+                        <div style="text-align: right">
+                            <input type="button"  value="Agregar">
+                        </div>
+                        <br/>
                     </div>
-                    <input type="button" id="agregar_valuo" value="Agregar">
+                    <div style="text-align: right; padding-top: 10px;">
+                        <input type="button" id="agregar_valuo" value="Agregar">
+                    </div>
                 </div>
-                <div id="croquis" style="display:none">
-                    <br><br><br>
+                <div id="tabs-3">
                     <table width="100%" border="0" cellpadding="0" cellspacing="0">
                         <tbody>
                             <tr>
@@ -904,16 +951,14 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>               
                 </div>
-                <div id="investigaciones" style="display:none">
-                    <br><br><br>
-                    <textarea style="width: 97%; height: 200px;"></textarea>
-                    </textarea>
+                <div id="tabs-4">
+                    <textarea style="min-width: 1000px; max-width: 1000px; min-height: 200px; max-height: 200px;"></textarea>
                 </div>
-                <div id="infracciones" style="display:none">
+                <div id="tabs-5">
                     Articulo:<br>
-                    <input type="text" class="#" id=""> <input type="submit" value=" + "><br><br>
+                    <input type="text" class="#" id=""> <input type="button" value=" + "><br><br>
 
                     <h6>Articulso Seleccionados</h6>
                     <table width="100%" border="1" cellpadding="0" cellspacing="0">
@@ -930,211 +975,38 @@
                                 <td>Fracción</td>
                                 <td>Descripcion</td>
                             </tr>
-                         </tbody>
+                        </tbody>
                     </table>
                 </div>
-                <div id="fotografias" style="display:none">
+                <div id="tabs-6">
                     <div style="background-color: #ccc; width: 291px; height: 291px;"><br></div>
-                    <input type="file" class="#" id=""> <br>
-                </div><br><br><br>
+                    <input type="file" class="#" id="">                  
+                </div>
+            </div>
 
-            
 
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-            <tbody>
-                <tr>
-                    <td>
-                        <input type="submit" value="Guardar">
-                        <input type="submit" value="Cancelar">
-                        <a href="#"><img width="30" src="img/pdf_logo.png"></a>
-                        <a href="#"><img width="30" src="img/Download-128.png"></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
+
+
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="submit" id="btn_guardar" value="Guardar">
+                            <input type="button" id="btn_cancelar" value="Cancelar">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="hidden" value="<?= $_REQUEST['do']; ?>" id="do" name="do"/>
+            <input type="hidden" value="<?= date('Y'); ?>" id="anio" name="anio" />
+
+        </div>
+        <input type="hidden" id="opc" name="opc" value="6"/>
+        <input type="hidden" id="cabina_id" name="cabina_id" value=""/>
     </form>
 </div>
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-
-    $("#agregar_vehiculos").on( "click", function() {    
-        $('#vehiculos').toggle(function(){
-                            $(".block").animate("slow");
-                        });
-            if(document.getElementById("agregar_vehiculos").value=="Agregar") {
-                document.getElementById("agregar_vehiculos").value = "Cancelar";
-            }           
-            else if(document.getElementById("agregar_vehiculos").value=="Cancelar") {
-                document.getElementById("agregar_vehiculos").value = "Agregar";
-            }         
-    });
-    $("#agregar_saldo").on( "click", function() {    
-        $('#saldo').toggle(function(){
-                            $(".block").animate("slow");
-                        });
-            if(document.getElementById("agregar_saldo").value=="Agregar") {
-                document.getElementById("agregar_saldo").value = "Cancelar";
-            }           
-            else if(document.getElementById("agregar_saldo").value=="Cancelar") {
-                document.getElementById("agregar_saldo").value = "Agregar";
-            }         
-    });
-    $("#agregar_judicial").on( "click", function() {    
-        $('#judicial').toggle(function(){
-                            $(".block").animate("slow");
-                        });
-            if(document.getElementById("agregar_judicial").value=="Agregar") {
-                document.getElementById("agregar_judicial").value = "Cancelar";
-            }           
-            else if(document.getElementById("agregar_judicial").value=="Cancelar") {
-                document.getElementById("agregar_judicial").value = "Agregar";
-            }         
-    });
-
-    $("#agregar_valuo").on( "click", function() {    
-        $('#peritos').toggle(function(){
-                            $(".block").animate("slow");
-                        });
-            if(document.getElementById("agregar_valuo").value=="Agregar") {
-                document.getElementById("agregar_valuo").value = "Cancelar";
-            }           
-            else if(document.getElementById("agregar_valuo").value=="Cancelar") {
-                document.getElementById("agregar_valuo").value = "Agregar";
-            }         
-    });
-});
-
-
-function toggle(elemento) {
-          if(elemento.value=="observaciones") {
-              document.getElementById("p_obserbaciones").style.background = "#dedddd";
-              document.getElementById("observaciones").style.display = "block";
-              document.getElementById("p_ficha_tecnica").style.background = "#fff";
-              document.getElementById("ficha_tecnica").style.display = "none";
-              document.getElementById("p_croquis").style.background = "#fff";
-              document.getElementById("croquis").style.display = "none";
-              document.getElementById("p_investigaciones").style.background = "#fff";
-              document.getElementById("investigaciones").style.display = "none";
-              document.getElementById("p_infracciones").style.background = "#fff";
-              document.getElementById("infracciones").style.display = "none";
-              document.getElementById("p_fotografias").style.background = "#fff";
-              document.getElementById("fotografias").style.display = "none";
-           }
-           else if(elemento.value=="ficha_tecnica") {
-              document.getElementById("p_obserbaciones").style.background = "#fff";
-              document.getElementById("observaciones").style.display = "none";
-              document.getElementById("p_ficha_tecnica").style.background = "#dedddd";
-              document.getElementById("ficha_tecnica").style.display = "block";
-              document.getElementById("p_croquis").style.background = "#fff";
-              document.getElementById("croquis").style.display = "none";
-              document.getElementById("p_investigaciones").style.background = "#fff";
-              document.getElementById("investigaciones").style.display = "none";
-              document.getElementById("p_infracciones").style.background = "#fff";
-              document.getElementById("infracciones").style.display = "none";
-              document.getElementById("p_fotografias").style.background = "#fff";
-              document.getElementById("fotografias").style.display = "none";
-           }
-           else if(elemento.value=="croquis") {
-              document.getElementById("p_obserbaciones").style.background = "#fff";
-              document.getElementById("observaciones").style.display = "none";
-              document.getElementById("p_ficha_tecnica").style.background = "#fff";
-              document.getElementById("ficha_tecnica").style.display = "none";
-              document.getElementById("p_croquis").style.background = "#dedddd";
-              document.getElementById("croquis").style.display = "block";
-              document.getElementById("p_investigaciones").style.background = "#fff";
-              document.getElementById("investigaciones").style.display = "none";
-              document.getElementById("p_infracciones").style.background = "#fff";
-              document.getElementById("infracciones").style.display = "none";
-              document.getElementById("p_fotografias").style.background = "#fff";
-              document.getElementById("fotografias").style.display = "none";
-           }
-           else if(elemento.value=="investigaciones") {
-              document.getElementById("p_obserbaciones").style.background = "#fff";
-              document.getElementById("observaciones").style.display = "none";
-              document.getElementById("p_ficha_tecnica").style.background = "#fff";
-              document.getElementById("ficha_tecnica").style.display = "none";
-              document.getElementById("p_croquis").style.background = "#fff";
-              document.getElementById("croquis").style.display = "none";
-              document.getElementById("p_investigaciones").style.background = "#dedddd";
-              document.getElementById("investigaciones").style.display = "block";
-              document.getElementById("p_infracciones").style.background = "#fff";
-              document.getElementById("infracciones").style.display = "none";
-              document.getElementById("p_fotografias").style.background = "#fff";
-              document.getElementById("fotografias").style.display = "none";
-           }
-           else if(elemento.value=="infracciones") {
-              document.getElementById("p_obserbaciones").style.background = "#fff";
-              document.getElementById("observaciones").style.display = "none";
-              document.getElementById("p_ficha_tecnica").style.background = "#fff";
-              document.getElementById("ficha_tecnica").style.display = "none";
-              document.getElementById("p_croquis").style.background = "#fff";
-              document.getElementById("croquis").style.display = "none";
-              document.getElementById("p_investigaciones").style.background = "#fff";
-              document.getElementById("investigaciones").style.display = "none";
-              document.getElementById("p_infracciones").style.background = "#dedddd";
-              document.getElementById("infracciones").style.display = "block";
-              document.getElementById("p_fotografias").style.background = "#fff";
-              document.getElementById("fotografias").style.display = "none";
-           }
-           else if(elemento.value=="fotografias") {
-              document.getElementById("p_obserbaciones").style.background = "#fff";
-              document.getElementById("observaciones").style.display = "none";
-              document.getElementById("p_ficha_tecnica").style.background = "#fff";
-              document.getElementById("ficha_tecnica").style.display = "none";
-              document.getElementById("p_croquis").style.background = "#fff";
-              document.getElementById("croquis").style.display = "none";
-              document.getElementById("p_investigaciones").style.background = "#fff";
-              document.getElementById("investigaciones").style.display = "none";
-              document.getElementById("p_infracciones").style.background = "#fff";
-              document.getElementById("infracciones").style.display = "none";
-              document.getElementById("p_fotografias").style.background = "#dedddd";
-              document.getElementById("fotografias").style.display = "block";
-           }
-
-         
-
-        }
-
-function initMap() {
-
-    var ciudad = {lat: 21.121897,lng: -101.682680 };
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: ciudad
-    });
-
-
-google.maps.event.addListener(map, 'click', function(e) {
-    placeMarker(e.latLng, map);
-    document.getElementById("lat").value = e.latLng.lat();
-    document.getElementById("lon").value = e.latLng.lng();
-  });
-
-
-
-function placeMarker(position, map) {
-    if($("#lat").val() == ''){
-        var marker = new google.maps.Marker({
-        position: position,
-        map: map
-        });  
-        map.panTo(position);
-    }
-        
-        else{
-            alert('Datos en el campo')
-        }
-    }
-    
-    
-}
-
-      
-      
-</script>
+<script src="js/siosp/views/tm_captura_eventos.js" type="text/javascript"></script>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKQH_v6dldrN4WwSOdbdwdsfgJgYNBIVA&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKQH_v6dldrN4WwSOdbdwdsfgJgYNBIVA">
 </script>

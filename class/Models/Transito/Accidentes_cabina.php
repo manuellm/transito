@@ -20,6 +20,12 @@ class Accidentes_cabina extends \Siosp\Core\Model {
             $ms = self::connectDb();
             /* @var $query \mysqli_result */
             $query = $ms->query($sql);
+        } else if (isset($_GET['folio'])) {
+            $table = static::getTable();
+            $sql = "select * from $table where folio_evento = " . $_GET['folio'] . " ";
+            $ms = self::connectDb();
+            /* @var $query \mysqli_result */
+            $query = $ms->query($sql);
         } else {
             $table = static::getTable();
             $sql = "select * from $table";

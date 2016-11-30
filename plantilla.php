@@ -25,7 +25,7 @@ if ($aux == 0) {
     <head>
         <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sistema Integral de Operaciones de Proteccion Civil</title>
+        <title>Sistema Integral de Operaciones de Seguridad Publica</title>
         <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.js"></script>
@@ -47,14 +47,14 @@ if ($aux == 0) {
         <link href="css/ui.dynatree.css" rel="stylesheet" type="text/css" />
 
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
-        <link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="js/jquery.numeric.js"></script>
-        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-        <script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js" type="text/javascript"></script>
+        <!--<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>-->
+        <!--<script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js" type="text/javascript"></script>-->
         <script src="bower_components/sprintf/dist/sprintf.min.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="js/select2-master/dist/css/select2.css"/>  
-        <link href="bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css"/>-->
 
         <?php
         /* <script src="http://marak.com/faker.js/js/faker.js"></script>
@@ -64,8 +64,8 @@ if ($aux == 0) {
          */
         ?>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
-        <script src="bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js" type="text/javascript"></script>
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
+        <script src="bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js" type="text/javascript"></script>-->
         <script src="js/select2-master/dist/js/select2.full.js?<?= time() ?>"></script>
         <script src="js/siosp/utils/FillSelect.js?<?= time() ?>" type="text/javascript"></script>
         <script src="js/siosp/utils/siospSelects.js?<?= time() ?>" type="text/javascript"></script>
